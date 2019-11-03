@@ -1,32 +1,21 @@
 # CV-digit-recognition
 
-DIGIT RECOGNITION USING OPENCV
 
-These are the steps that are needed to detect handwritten digits -
-
-1.Create a database of handwritten digits.
-
-2.For each handwritten digit in the database, extract HOG features and train a Linear SVM.
-
-3.Use the classifier trained in step 2 to predict digits.
-
+Basic steps followed are:-
+1)Create a database of handwritten digits.
+2)For each handwritten digit in the database, extract HOG features and train a Linear SVM.
+3)Use the classifier trained in step 2 to predict digits.
 
 MNIST DATABASE
 
-Here, we use the MNIST database as the database.
-The MNIST database is a set of 70000 samples of handwritten digits where each sample consists of a grayscale image of size 28×28. 
-There are a total of 70,000 samples. We will use sklearn.datasets package to download the MNIST database from mldata.org. 
 
-TRAINING THE CLASSIFIER
+The MNIST database is a set of 70000 samples of handwritten digits where each sample consists of a grayscale image of size 28×28. There are a total of 70,000 samples. It is downloaded from  http://yann.lecun.com/exdb/mnist/.The training files are extracted and then given as input.
 
-We will implement the following steps –
+CLASSIFIER
 
-1.Calculate the HOG features for each sample in the database.
+We will use the sklearn.externals.joblib package to save the classifier in a file so that we can use the classifier again without performing training each time. We use skimage.feature.hog class to calculate the HOG features and sklearn.svm.LinearSVCclass to perform prediction after training the classifier. We store our HOG features and labels in numpy arrays. 
 
-2.Train a multi-class linear SVM with the HOG features of each sample along with the corresponding label.
+PREDICTION
 
-3.Save the classifier in a file
 
-LOADING THE CLASSIFIER
-
-Then we load the classifier and use it in the code.
+We predict the digits by loading the classifier created in our code.
