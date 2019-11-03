@@ -5,7 +5,9 @@ DIGIT RECOGNITION USING OPENCV
 These are the steps that are needed to detect handwritten digits -
 
 1.Create a database of handwritten digits.
+
 2.For each handwritten digit in the database, extract HOG features and train a Linear SVM.
+
 3.Use the classifier trained in step 2 to predict digits.
 
 
